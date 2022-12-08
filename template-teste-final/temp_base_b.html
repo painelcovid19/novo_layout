@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="cssss/pagina01.css">
+    <link rel="stylesheet" href="cssss/contante.css" >
+    <link rel="stylesheet" href="cssss/oresto.css" >
+    <link rel="stylesheet" href="cssss/sobre.css" >
+</head>
+<body>
+    <header  id="cabecaaa">
+        <div class="logo-painel-covid">
+            <h1>
+                <span>
+                    Painel
+                </span> 
+                COVID 19
+            </h1>
+        </div>
+
+        <nav id="navegacao">
+            <ul>
+                <li class="btin presente">
+                    <a href="inicio_s.html">Inicio</a>
+                </li>
+                <li class="btmap">
+                    <a href="mapas_s.html">Mapas</a>
+                </li>
+                <li class="btest">
+                    <a href="estimativas_s.html">Estimativas RT</a>
+                </li>
+                <li class="btvac">
+                    <a href="ivacina_s.html">Vacinas</a>
+                </li>
+
+                <li class="btsob">
+                    <a href="sobre_s.html">Sobre</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="logo-unilab">
+           
+                <img src="imagens/logo-unilab.png" alt="logo-unilab">
+
+        </div>
+
+        <div class="menu-icone" onclick="abrefecha()">
+            <ion-icon name="close-outline" id="menux"></ion-icon>
+            <ion-icon name="menu-outline" class="ativo" id="menulinha"></ion-icon>
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+    <footer>
+        <span></span>
+        <div class="fontes">
+            <h3>
+                Fontes
+            </h3>
+
+            <div class="main-box-links-das-fontes">
+
+                <div class="box-links-das-fontes">
+
+                    <div class="tipo-de-info">
+                        <P>
+                            Casos e Obitos:
+                        </P>
+                    </div>
+
+                    <div class="a-info">
+                        <a href="https://brasil.io/home/">BRASIL.IO</a>
+                    </div>
+
+                </div>
+
+                <div class="box-links-das-fontes">
+
+                    <div class="tipo-de-info">
+                        <P>
+                           Vacinas:
+                        </P>
+                    </div>
+
+                    <div class="a-info">
+                        <a href="https://dados.gov.br/dataset/covid-19-vacinacao">Ministerio Da Saude</a>
+                    </div>
+
+                </div>
+
+                <div class="box-links-das-fontes">
+
+                    <div class="tipo-de-info">
+                        <P>
+                           Estimativa Da População Total:
+                        </P>
+                    </div>
+
+                    <div class="a-info">
+                        <a href="https://www.ibge.gov.br/cidades-e-estados">IBGE</a>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="atualizcao">
+                <p>
+                    Ultima atualização <span>10/03/2000</span>
+                </p>
+            </div>
+
+        </div>
+
+        
+
+        <div class="instituicoes">
+
+            <div class="box-img-instituto">
+                <img src="imagens/logo-ieds.jpg" alt="">
+            </div>
+
+            <div class="box-img-instituto">
+                <img src="imagens/logo-proex.jpg" alt="">
+            </div>
+
+            <div class="box-img-instituto">
+                <img src="imagens/logo-unilab.png" alt="">
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="funcoes.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

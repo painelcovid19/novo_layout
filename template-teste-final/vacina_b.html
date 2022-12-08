@@ -1,0 +1,23 @@
+{% extends "temp_base_b.html" %}
+
+{% block content %}
+<main>
+    <h2>Aplicação de vacinas</h2>
+    <div class="slide">
+        <div class="mapinhas">
+            {{ Plot | safe }}
+        </div>
+    </div>
+        
+    <script>
+    
+        let botnavincio = document.querySelector('.btin')
+        let botnavvacina = document.querySelector('.btvac')
+                
+        botnavvacina.classList.add('presente')
+        botnavincio.classList.remove('presente')       
+        
+    </script>
+    
+</main>
+{% endblock %}

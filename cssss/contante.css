@@ -1,0 +1,407 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+
+:root
+{
+    --branco: #fff;
+    --card-bacground: rgba(255, 255, 255, 0);
+    --branco2: #CCCCCC;
+    --branco3: #A2A2A2;
+    --escuro: #333;
+    --preto: #000;
+
+   
+    --sobra: 0px 24px 74px rgba(0, 0, 0, 0.16);
+
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 20px;
+    padding-block: 10px;
+  
+}
+
+header.ativo
+{
+    width: 98%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.452);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--sobra);
+    z-index: 100;
+    background-blend-mode: difference;
+}
+
+header .logo-painel-covid h1 span
+{
+  
+    padding-right: 5px;
+    font-size: .8em;
+    
+}
+
+header nav ul
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header nav ul li
+{
+    list-style: none;
+}
+
+header nav ul li.presente a
+{
+    background: var(--preto);
+    color: var(--branco);   
+}
+
+header nav ul li.presente a:hover
+{
+    background: var(--preto);
+    color: var(--branco);
+    box-shadow: var(--sobra);
+}
+header nav ul li a
+{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 18px;
+    color: black;
+    transition: ease-in .3s;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+header nav ul li a:hover
+{
+    
+    border: 1px solid var(--preto);
+}
+
+header .logo-unilab
+{
+    height: 60px;
+    width: calc(4.5 * 60px);
+   
+}
+
+header .logo-unilab img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .menu-icone
+{
+    display: none;
+}
+
+
+/*==================footer====================*/
+
+footer
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    width: 100%;
+}
+
+footer span
+{
+    height: 1px;
+    background: var(--preto);
+    width: 80%;
+}
+
+footer .fontes
+{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+}
+
+footer .fontes h3
+{
+   font-size: 1.8em;
+}
+
+footer .fontes .main-box-links-das-fontes
+{
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-inline: 20px ;
+}
+
+footer .fontes .main-box-links-das-fontes .box-links-das-fontes
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+footer .fontes .main-box-links-das-fontes .box-links-das-fontes .tipo-de-info
+{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+footer .fontes .main-box-links-das-fontes .box-links-das-fontes .tipo-de-info p
+{
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+footer .fontes .main-box-links-das-fontes .box-links-das-fontes .a-info a
+{
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--branco);
+    border-radius: 30px;
+    background: var(--preto);
+    transition:  ease .4s;
+    font-weight: 600;
+}
+
+
+footer .fontes .main-box-links-das-fontes .box-links-das-fontes .a-info a:hover
+{
+   box-shadow: var(--sobra);
+    background: var(--branco);
+    color: var(--preto);
+
+}
+
+
+footer .fontes .atualizcao
+{
+   
+    margin-top: 32px;
+    box-shadow: var(--sobra);
+    padding: 17px 5px ;
+    padding-left: 15px;
+    border-radius: 50px;
+}
+
+
+
+footer .fontes .atualizcao span
+{
+    color: var(--branco);
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 10px;
+}
+
+footer .instituicoes
+{
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-around;
+
+    padding-inline: 20px;
+}
+
+footer .instituicoes .box-img-instituto
+{
+  
+    height: 100px;
+    width: calc(5 * 60px);
+    object-fit: cover;
+}
+
+footer .instituicoes .box-img-instituto img
+{
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+footer .instituicoes .box-img-instituto:nth-child(3)
+{
+    width: calc(6 * 60px);
+}
+
+/*-----------------RESPONSIVIDADE 1-------------------------*/
+
+@media screen and (max-width: 1110px ) and (min-width: 810px )
+{
+    header .logo-unilab
+    {
+        display: none;
+    }
+
+    header .logo-painel-covid h1
+    {
+        font-size: 24px;
+    }
+
+
+}
+
+@media screen and (max-width: 809px ) 
+{
+    
+
+    header .logo-unilab
+    {
+        display: none;
+    }
+
+    header .logo-painel-covid h1
+    {
+        font-size: 20px;
+    }
+
+    header .logo-painel-covid h1 span
+    {
+        font-size: .7em;
+    }
+
+    header nav
+    {
+       display: none;
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       
+       box-shadow: var(--sobra);
+       background: var(--branco);
+       z-index: 111;
+       padding-block: 50px;
+       
+    }
+
+    header nav.ativo
+    {
+        display: block;
+    }
+
+    header nav ul 
+    {
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    header nav ul li a
+    {
+        font-size: 20px;
+        padding: 5px 30px;
+    }
+
+    header.ativo .menu-icone
+    {
+        margin-right: 30px;
+        background: rgba(255, 255, 255, 0.63);
+    }
+
+    header .menu-icone
+    {
+        position: relative;
+        display: block;
+        border-radius: 10px;
+       
+        
+        width: 40px;
+        height: 40px;
+        box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.144);
+        transition: all .3s;
+
+        z-index: 1111;
+    
+    }
+
+    header .menu-icone ion-icon
+    {
+       
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 2em;
+        opacity: 0;
+        transition: all .3s;
+        
+    }
+    
+    header .menu-icone ion-icon.ativo
+    {
+        opacity: 1;
+    }
+
+    /*-------------------FOOTER-------------------------*/
+
+    footer .fontes .atualizcao p
+    {
+    font-size: 15px;
+    }
+
+    footer .fontes .main-box-links-das-fontes .box-links-das-fontes
+    {
+        flex-direction: column;
+    }
+    footer .fontes .main-box-links-das-fontes .box-links-das-fontes .tipo-de-info p
+    {
+        font-size: 1.1em;
+    }
+
+    footer .instituicoes .box-img-instituto
+    {
+  
+    height: auto;
+    width: calc(2* 60px);
+    object-fit: cover;
+    }
+
+    footer .instituicoes .box-img-instituto img
+    {
+    width: 100%;
+    height: 100%;
+    
+    }
+
+
+    footer .instituicoes .box-img-instituto:nth-child(3)
+    {
+        width: calc(2 * 60px);
+    }
+
+}

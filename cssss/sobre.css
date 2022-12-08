@@ -1,0 +1,380 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+
+:root
+{
+    --branco: #fff;
+    --card-bacground: rgba(255, 255, 255, 0);
+    --branco2: #CCCCCC;
+    --branco3: #A2A2A2;
+    --escuro: #333;
+    --preto: #000;
+
+   
+    --sobra: 0px 24px 74px rgba(0, 0, 0, 0.219);
+    
+
+
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body
+{
+  overflow-x: hidden;
+}
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+    margin-block: 100px;
+}
+
+main h2
+{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 400;
+    padding-inline: 70px;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--preto);
+}
+
+
+
+/*================SOBRE=======================*/
+
+
+
+.container
+{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+
+   
+ /* From uiverse.io by @alexruix */
+.card {
+  width: 230px;
+  height: 350px;
+  border-radius: 1em;
+  
+  background: #bbccf1 ;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.4s ease-out;
+  box-shadow: var(--sobra);
+  border-radius: 1rem;
+  overflow: hidden;
+ }
+ 
+ .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #0a3394 url("https://painelcovid19.github.io/images/profTales.jpeg");
+  background-size: cover;
+  background-position: center center;
+  z-index: 2;
+  transition: 0.5s;
+  border-radius: 1rem;
+ }
+
+ .card.n1:before
+ {
+  background: #0a3394 url("https://painelcovid19.github.io/images/prof-Sabi.jpg");
+  background-size: cover;
+  background-position: center center;
+ }
+
+ .card.n2:before
+ {
+  background: #0a3394 url("https://painelcovid19.github.io/images/Gildo5.jpg");
+  background-size: cover;
+  background-position: bottom center;
+ }
+
+ .card.n3:before
+ {
+  background: #0a3394 url("https://painelcovid19.github.io/images/Edilson.jpeg");
+  background-size: cover;
+  background-position: bottom center;
+ }
+
+ .card.n4:before
+ {
+  background: #0a3394 url("https://painelcovid19.github.io/images/jose.jpeg");
+  background-size: cover;
+  background-position: bottom center;
+ }
+
+ .card.n5:before
+ {
+  background: #0a3394 url("https://dautarim.github.io/meu-contato/imagens/profile-pic%20(1).png");
+  background-size: cover;
+  background-position: center center;
+ }
+
+ .card.n6:before
+ {
+  background: #0a3394 url("https://sig.unilab.edu.br/shared/verFoto?idFoto=735160&key=2edd9b06778dd3d1d38114def020ed75");
+  background-size: cover;
+  background-position: center center;
+ }
+ 
+ .card-info {
+
+  position: relative;
+  z-index: 3;
+  color: #f5f5f5;
+  opacity: 1;
+  transform: translateY(75%);
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backdrop-filter: blur(1rem);
+  background: rgba(0, 0, 0, 0.26);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  padding: .5rem;
+  flex-direction: column;
+  text-align: center;
+ }
+ .card.n2 .card-info, .card.n3 .card-info
+ {
+  transform: translateY(80%);
+ }
+ .card.n5 .card-info, .card.n4 .card-info
+{
+  transform: translateY(74%);
+
+}
+
+
+ .card-info p
+ {
+  color: white;
+ }
+
+  /*Text*/
+ .funcao
+ {
+
+  font-size: 1.1rem;
+   text-decoration: underline;
+ }
+
+ .text-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+ }
+ 
+ .card.n5 .text-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+ }
+ .text-body {
+  
+  font-size: 1rem;
+  margin: 1.5rem 0 0 0;
+ }
+ 
+ .card-info a
+ {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  padding: .3rem 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.637);
+  background: white;
+ }
+ 
+ /*Image*/
+ .card-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ee9ca7;
+  background: linear-gradient(to bottom, #e7aeae, #ee9ca7);
+  border-radius: 1rem;
+ }
+ 
+ /*Hover*/
+ .card:hover {
+  transform: translateY(5%);
+ }
+ 
+ .card:hover:before {
+  opacity: 1;
+ }
+ 
+ .card:hover .card-info {
+  justify-content: center;
+ 
+  transform: translateY(0);
+  background: rgba(0, 0, 0, 0.356);
+  backdrop-filter: blur(1.5rem);
+  padding-block: 10px;
+
+ }
+ 
+
+
+   .sobreoprojeto
+   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   }
+
+
+   
+   .falatorios
+   {
+    
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+   }
+
+   .textof 
+   {
+    width: 60%;
+   }
+ 
+
+   .textof p
+   {
+    
+    font-size: 24px;
+   }
+
+  .imagemdaunilab
+  {
+    width: 35%;
+  }
+
+  .imagemdaunilab img
+  {
+    width: 100%;
+    object-fit: cover;
+  }
+
+
+
+  .asfontes
+  {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .asfontes h3
+  {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin: auto;
+  }
+
+  .asfontes .linkfontes
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+  }
+
+  .asfontes .linkfontes a
+  {
+    font-size: 2.4rem;
+    text-decoration: none;
+    padding: 1rem;
+    transition: ease .3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .asfontes .linkfontes a::before
+  {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: black;
+    width: 100%;
+    height: .2rem;
+    z-index: -1;
+
+    transition: ease .3s;
+  }
+
+  .asfontes .linkfontes a:hover
+  {
+    color: white;
+  }
+
+  .asfontes .linkfontes a:hover::before 
+  {
+    height: 100%;
+  }
+
+  /*------------------------RESPONSIVIDADE----------------------*/
+
+  @media screen and (max-width: 810px) 
+  {
+
+    .falatorios
+    {
+      flex-direction: column;
+    }
+
+    .textof 
+   {
+    width: 100%;
+   }
+
+   .textof p
+   {
+    
+    font-size: 20px;
+   }
+
+  .imagemdaunilab
+  {
+    width: 100%;
+  }
+    
+  }
