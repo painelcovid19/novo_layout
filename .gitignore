@@ -16,3 +16,5 @@ covid_br/get_df_campis.ipynb
 teste_2.html
 grafico.html
 vacinas.html
+scripts/graficos/__pycache__/
+.github

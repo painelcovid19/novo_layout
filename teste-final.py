@@ -1,7 +1,8 @@
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from plotly import express as px
-from plotly.offline import plot
-from plotly.graph_objs import Scatter
+import plotly.io as pio
+
+
+# importando graficos de casos confirmados e obitos
 from scripts.graficos.main import (
     confirmated_cases_acarape,
     confirmated_cases_redencao,
@@ -10,6 +11,8 @@ from scripts.graficos.main import (
     death_cases_redencao,
     death_cases_SFC
 )
+
+# importando dados totais de casos confirmados e obitos(actualiza os cards)
 from scripts.graficos.packages.utils import (
     last_actualization_date_acarape,
     last_actualization_date_redencao,
@@ -22,6 +25,9 @@ from scripts.graficos.packages.utils import (
   SFC_total_confirmated_data,
   SFC_tota_death_data
 )
+
+from scripts.graficos.main import mapas
+from scripts.graficos.vacinas_html import vacinas, data, layout
 
 loader = FileSystemLoader("template-teste-final/")
 env = Environment(loader=loader, autoescape=select_autoescape())
@@ -62,14 +68,24 @@ with open("index.html", "wb")  as index_file:
 
 with open("vacina_s.html", "wb")  as index_file:
 
-    output = templatevacina_b.render(title= "Painel Covid 19", Plot =confirmated_cases_acarape.to_html(full_html=False, include_plotlyjs=True))
+    output = templatevacina_b.render(
+        title= "Painel Covid 19", 
+        Plot1 =vacinas.to_html(full_html=False, include_plotlyjs=True),
+        Plot2 =pio.to_html(dict(data=data, layout=layout), full_html=False, include_plotlyjs=True)
+        )
 
     index_file.write(output.encode('utf-8'))
 
 
 with open("mapas_s.html", "wb")  as index_file:
 
-    output = templatemapas_b.render(title= "Painel Covid 19", Plot =confirmated_cases_redencao.to_html(full_html=False, include_plotlyjs=True), Plot1 =death_cases_acarape.to_html(full_html=False, include_plotlyjs=True), Plot2 =confirmated_cases_SFC.to_html(full_html=False, include_plotlyjs=True))
+    output = templatemapas_b.render(
+        title= "Painel Covid 19", 
+        Plot =mapas[0].to_html(full_html=False, include_plotlyjs=True), 
+        Plot1 =mapas[1].to_html(full_html=False, include_plotlyjs=True), 
+        Plot2 =mapas[2].to_html(full_html=False, include_plotlyjs=True),
+        Plot3 =mapas[3].to_html(full_html=False, include_plotlyjs=True)
+        )
 
     index_file.write(output.encode('utf-8'))
 

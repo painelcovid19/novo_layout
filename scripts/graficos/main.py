@@ -186,6 +186,6 @@ mapa_obitos_ba = px.choropleth_mapbox(
     width=650
 )
 
-
+mapas = [mapa_confirmados_ce, mapa_obitos_ce,mapa_confirmados_ba, mapa_obitos_ba]
 
 

@@ -54,8 +54,9 @@ main h2
     width: 100%;
     display: flex;
     align-items: center;
+    gap: 50px;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     /* padding-block: 100px; */
 }
