@@ -2,7 +2,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from plotly import express as px
 from plotly.offline import plot
 from plotly.graph_objs import Scatter
-from main import (
+from scripts.graficos.main import (
     confirmated_cases_acarape,
     confirmated_cases_redencao,
     confirmated_cases_SFC,
@@ -10,7 +10,7 @@ from main import (
     death_cases_redencao,
     death_cases_SFC
 )
-from packages.utils import (
+from scripts.graficos.packages.utils import (
     last_actualization_date_acarape,
     last_actualization_date_redencao,
     last_actualization_date_SFC,
