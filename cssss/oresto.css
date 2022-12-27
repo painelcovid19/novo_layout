@@ -12,8 +12,6 @@
 
    
     --sobra: 0px 24px 74px rgba(0, 0, 0, 0.219);
-    
-
 
 }
 
@@ -26,7 +24,7 @@
 
 body
 {
-    overflow-x: hidden;
+   overflow-x: hidden;
 }
 
 main
@@ -56,17 +54,22 @@ main h2
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: center;
-    /* padding-block: 100px; */
+    overflow: auto;
+   
 }
+
+
+
 
 .mapinhas
 {
  
     border-radius: 20px;
-    /* width: 1000px;
-    height: 600px; */
     box-shadow: var(--sobra);
 }
 
+@media screen and (max-width: 810px )
+{
+
+}

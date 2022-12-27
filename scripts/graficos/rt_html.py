@@ -37,3 +37,4 @@ figure_redencao = rt.estimate_plotly(df_reformated_redencao, city_name="Reden√ß√
 figure_Fortaleza = rt.estimate_plotly(df_reformated_Fortaleza, city_name="Fortaleza")
 figure_Salvador = rt.estimate_plotly(df_reformated_Salvador, city_name="Salvador")
 
+graf = [figure_acarape,figure_SFC,figure_redencao,figure_Fortaleza,figure_Salvador]

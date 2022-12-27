@@ -28,6 +28,7 @@ from scripts.graficos.packages.utils import (
 
 from scripts.graficos.main import mapas
 from scripts.graficos.vacinas_html import vacinas, data, layout
+from scripts.graficos.rt_html import graf
 
 loader = FileSystemLoader("template-teste-final/")
 env = Environment(loader=loader, autoescape=select_autoescape())
@@ -92,7 +93,12 @@ with open("mapas_s.html", "wb")  as index_file:
 
 with open("estimativas_s.html", "wb")  as index_file:
 
-    output = templateestimativas_b.render(title = "Painel Covid 19", Plot =death_cases_redencao.to_html(full_html=False, include_plotlyjs=True), Plot1 =death_cases_SFC.to_html(full_html=False, include_plotlyjs=True), Plot2 =death_cases_SFC.to_html(full_html=False, include_plotlyjs=True))
+    output = templateestimativas_b.render(title = "Painel Covid 19", 
+    Plot =graf[0].to_html(full_html=False, include_plotlyjs=True),
+    Plot1 =graf[1].to_html(full_html=False, include_plotlyjs=True), 
+    Plot2 =graf[2].to_html(full_html=False, include_plotlyjs=True),
+    Plot3 =graf[3].to_html(full_html=False, include_plotlyjs=True),
+    Plot4 =graf[4].to_html(full_html=False, include_plotlyjs=True))
 
     index_file.write(output.encode('utf-8'))
 
