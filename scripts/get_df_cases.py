@@ -77,28 +77,32 @@ def get_dataset(url):
 
     return df_cities
 
-directory = "./data"
-if not os.path.exists(directory):
-    os.makedirs(directory)
 
-df_campis = get_dataset(url=campis_url)
-df_campis.to_csv(f"{directory}/df_cidades_campi.csv", index=False)
+def extract_and_load_df_cases():
+    
+    s3_directory = "s3://painelcovid2023/data"
 
-last_updated_date = []
-last_updated_date.append(get_last_update_date(df_campis[df_campis["city"] == "Acarape"]))
-last_updated_date.append(get_last_update_date(df_campis[df_campis["city"] == "Redenção"]))
-last_updated_date.append(get_last_update_date(df_campis[df_campis["city"] == "São Francisco do Conde"]))
+    df_campis = get_dataset(url=campis_url)
+    df_campis.to_csv(f"{s3_directory}/df_cidades_campi.csv", index=False)
 
-with open(f"{directory}/last_update_dates.csv", "w", encoding="utf-8") as csv_file:
-    csv_writer= csv.writer(csv_file)
-    csv_writer.writerow(["city", "dates"])
-    for row in last_updated_date:
-        city = row["city"]
-        date = row["date"]
-        csv_writer.writerow([
-            city,
-            date
-        ])
+    last_updated_date = []
+    last_updated_date.append(get_last_update_date(df_campis[df_campis["city"] == "Acarape"]))
+    last_updated_date.append(get_last_update_date(df_campis[df_campis["city"] == "Redenção"]))
+    last_updated_date.append(get_last_update_date(df_campis[df_campis["city"] == "São Francisco do Conde"]))
 
-df_rt = get_dataset(url=rt_url)
-df_rt.to_csv(f"{directory}/df_cidades_rt.csv", index=False)
+    with open(f"./data/last_update_dates.csv", "w", encoding="utf-8") as csv_file:
+        csv_writer= csv.writer(csv_file)
+        csv_writer.writerow(["city", "dates"])
+        for row in last_updated_date:
+            city = row["city"]
+            date = row["date"]
+            csv_writer.writerow([
+                city,
+                date
+            ])
+            
+    df_last_update = pd.read_csv(f"./data/last_update_dates.csv")
+    df_last_update.to_csv(f"{s3_directory}/last_update_dates.csv", index=False)
+
+    df_rt = get_dataset(url=rt_url)
+    df_rt.to_csv(f"{s3_directory}/df_cidades_rt.csv", index=False)

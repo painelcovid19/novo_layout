@@ -2,6 +2,8 @@ import logging
 import numpy
 import pandas as pd
 
+s3_directory = "s3://painelcovid2023/data"
+
 logging.basicConfig(level=logging.DEBUG)
 
 def get_last_update_date(data):
@@ -49,7 +51,7 @@ def remove_negatives(list_entry):
 
 
 #           Datas da ultima actualização
-dates = pd.read_csv("./data/last_update_dates.csv")
+dates = pd.read_csv(f"{s3_directory}/last_update_dates.csv")
 
 last_actualization_date_acarape = dates[dates["city"] == "Acarape"]["dates"].loc[0]
 last_actualization_date_redencao = dates[dates["city"] == "Redenção"]["dates"].loc[1]
@@ -57,7 +59,7 @@ last_actualization_date_SFC = dates[dates["city"] == "São Francisco do Conde"][
 
 
 #           Dados acumulados
-acumulated_data = pd.read_csv("./data/df_dados_acumulados.csv")
+acumulated_data = pd.read_csv(f"{s3_directory}/df_dados_acumulados.csv")
 
 acarape_total_confirmated_data = acumulated_data[acumulated_data["city"] == "Acarape"]["last_available_confirmed"].loc[0]
 acarape_total_death_data = acumulated_data[acumulated_data["city"] == "Acarape"]["last_available_deaths"].loc[0]

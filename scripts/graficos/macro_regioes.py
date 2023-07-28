@@ -7,17 +7,18 @@ import plotly.graph_objects as go
 from plotly import express as px
 from plotly.subplots import make_subplots
 
-
+s3_directory_path = "s3://painelcovid2023/data"
 if __debug__:
-    macro_dados = pd.read_csv("./data/df_dados_macro_regioes_ceara.csv")
-    macro_dados_ba = pd.read_csv("./data/df_dados_macro_regioes_bahia.csv")
+    macro_dados = pd.read_csv(f"{s3_directory_path}/df_dados_macro_regioes_ceara.csv")
+    macro_dados_ba = pd.read_csv(f"{s3_directory_path}/df_dados_macro_regioes_bahia.csv")
 else:
-    macro_dados = pd.read_csv(
-        "https://raw.githubusercontent.com/painelcovid19/painelcovid19.github.io/main/data/df_dados_macro_regioes_ceara.csv"
-    )
-    macro_dados_ba = pd.read_csv(
-        'https://raw.githubusercontent.com/painelcovid19/painelcovid19.github.io/main/data/df_dados_macro_regioes_bahia.csv'
-    )
+    # macro_dados = pd.read_csv(
+    #     "https://raw.githubusercontent.com/painelcovid19/painelcovid19.github.io/main/data/df_dados_macro_regioes_ceara.csv"
+    # )
+    # macro_dados_ba = pd.read_csv(
+    #     'https://raw.githubusercontent.com/painelcovid19/painelcovid19.github.io/main/data/df_dados_macro_regioes_bahia.csv'
+    # )
+    pass
 
 
 # MODIFICANDO O NOME DAS COLUNAS last_available_confirmed_per_100k_inhabitants E last_available_deaths_per_100k_inhabitants

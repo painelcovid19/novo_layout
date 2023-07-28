@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta, timezone
-from packages.calculate_rt import  Calculate_Rt
+from scripts.graficos.packages.calculate_rt import Calculate_Rt
 import pandas as pd
 from plotly.subplots import make_subplots
 
@@ -10,8 +10,9 @@ from plotly.subplots import make_subplots
 #     dados_campis = pd.read_csv(
 #         "https://raw.githubusercontent.com/painelcovid19/painelcovid19.github.io/main/data/df_dados_macro_regioes_ceara.csv"
 #     )
+s3_directory_path = "s3://painelcovid2023/data"
 
-dados_campis = pd.read_csv("./data/df_cidades_rt.csv", parse_dates=["date"])
+dados_campis = pd.read_csv(f"{s3_directory_path}/df_cidades_rt.csv", parse_dates=["date"])
 
 
 df_redencao = dados_campis[dados_campis["city"] == "Redenção"]
